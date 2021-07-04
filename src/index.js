@@ -8,6 +8,8 @@ import { createStore, applyMiddleware, compose } from "redux";
 import rootReducers from "./reducers";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
+// global-styles
+import GlobalStyles from "./styles/GlobalStyles"
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -20,7 +22,8 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <GlobalStyles />
+          <App />
         </BrowserRouter>
       </Provider>
   </React.StrictMode>,
