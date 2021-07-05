@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 // components
 import Button from "./Button";
@@ -12,8 +12,22 @@ import ThunderCloudImg from "../media/images/thunder-cloud.png";
 import SunCloudImg from "../media/images/sun-cloud.png";
 import ThunderImg from "../media/images/thunder.png";
 import StarImg from "../media/images/star.png";
+// react-redux
+import { useDispatch } from "react-redux";
+// actions
+import { loadWeatherData } from "../actions/weatherAction";
 
 const IntroSection = () => {
+  const refInput = useRef();
+  const dispatch = useDispatch();
+
+  // event handler
+  const formHandler = (event) => {
+    event.preventDefault();
+    dispatch(loadWeatherData(event.target.firstChild.value));
+    refInput.current.value = "";
+  };
+
   return (
     <StyledIntro className="intro">
       <StyledContent className="styled-content">
@@ -25,15 +39,24 @@ const IntroSection = () => {
           give you as much applicable, nearby climate information as we can
           uncover.
         </p>
-        <form action="#" className="styled-form">
+        <form
+          onSubmit={formHandler}
+          value=""
+          action=""
+          className="styled-form"
+          autoComplete="off"
+        >
           <input
+            ref={refInput}
             type="text"
             for="place"
             className="place"
             id="place"
-            placeholder="Seach your place"
+            placeholder="Seach your City/ZIP Code"
           />
-          <Button content={"Search"} />
+          <button>
+            <Button content={"Search"} />
+          </button>
         </form>
       </StyledContent>
       <IntroImages className="intro-images">
@@ -76,6 +99,7 @@ const StyledContent = styled.div`
     justify-content: flex-start;
     margin-top: 6.4rem;
     input {
+      flex: 2;
       padding: 1rem;
       font-family: var(--font);
       font-size: 1.6rem;
@@ -91,6 +115,10 @@ const StyledContent = styled.div`
       background: #fff;
       border: 2px solid var(--main-color);
       outline: none;
+    }
+    button {
+      border: none;
+      flex: 1;
     }
   }
 `;

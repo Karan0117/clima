@@ -16,12 +16,11 @@ const StyledButton = styled.div`
   color: var(--white);
   background: var(--main-color);
   height: 5rem;
-  width: 25rem;
+  width: 100%;
   border-radius: var(--border);
   p {
     font-weight: var(--semi-bold);
     letter-spacing: 2px;
-    /* font-size: 1.6rem; */
   }
   cursor: pointer;
   :hover {

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 // components
 import Header from "./components/Header";
-// import IntroSection from "./components/IntroSection";
 import Home from "./pages/Home";
 // route
 import { Route } from "react-router-dom";
@@ -16,6 +15,7 @@ function App() {
           <Home />
         </Route>
         <Route path="/favorites">{/* <Favorites /> */}</Route>
+        <Route path="/weather">{/* <Weather /> */}</Route>
       </div>
     </StyledApp>
   );
