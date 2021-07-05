@@ -23,18 +23,37 @@ const GlobalStyles = createGlobalStyle`
         --font: "Poppins", sans-serif;
 
         /* border radius */
-        --border-radius: 10px;
+        --border-radius: 10px 0 0 10px;
+        --border: 10px;
 
         /* font weights */
         --bold: 700;
+        --semi-bold: 600;
         --medium: 500;
         --regular: 400;
 
     }
 
+    html{
+        font-size: 62.5%;
+    }
+
     body{
         font-family: var(--font);
     }
+    h1{
+        font-size: 5rem;
+    }
+    h2{
+        font-size: 4.5rem;
+    }
+    h4{
+        font-size: 3.6rem;
+        font-weight: var(--semi-bold);
+    }
+    p{
+        font-size: 1.6rem
+    }
 `;
 
-export default GlobalStyles;  
+export default GlobalStyles;

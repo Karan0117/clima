@@ -2,27 +2,34 @@ import React from "react";
 import styled from "styled-components";
 // components
 import Header from "./components/Header";
+// import IntroSection from "./components/IntroSection";
+import Home from "./pages/Home";
+// route
+import { Route } from "react-router-dom";
 
 function App() {
   return (
     <StyledApp className="App">
       <Header />
-      <Header />
-      <Header />
-      <Header />
-      <Header />
-      <Header />
-      <Header />
-      <Header />
-      <Header />
-      <Header />
+      <div className="app-container">
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/favorites">{/* <Favorites /> */}</Route>
+      </div>
     </StyledApp>
   );
 }
 
 const StyledApp = styled.div`
-height: 100vh;
-background: var(--bg);
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--bg);
+  padding: 1rem 0;
+  .app-container {
+    margin: auto;
+    width: 90%;
+  }
 `;
 
 export default App;
