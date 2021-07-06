@@ -71,7 +71,11 @@ export const getTime = (t) => {
   var date = new Date(t * 1000);
   var hours = date.getHours();
   var minutes = "0" + date.getMinutes();
-  return `${hours} : ${minutes.substr(-2)}`;
+  if (hours >= 0 && hours < 10) {
+    return `0${hours} : ${minutes.substr(-2)}`;
+  } else {
+    return `${hours} : ${minutes.substr(-2)}`;
+  }
 };
 
 export const getHour = (t) => {
