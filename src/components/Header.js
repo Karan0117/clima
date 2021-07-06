@@ -17,6 +17,7 @@ const Header = () => {
 const StyledHeader = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 2rem;
   a {
     text-decoration: none;
   }
