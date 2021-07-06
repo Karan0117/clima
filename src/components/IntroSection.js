@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 // components
 import Button from "./Button";
@@ -14,18 +14,22 @@ import ThunderImg from "../media/images/thunder.png";
 import StarImg from "../media/images/star.png";
 // react-redux
 import { useDispatch } from "react-redux";
+// router
+import { useHistory } from "react-router-dom";
 // actions
 import { loadWeatherData } from "../actions/weatherAction";
 
 const IntroSection = () => {
   const refInput = useRef();
   const dispatch = useDispatch();
+  const history = useHistory();
 
   // event handler
   const formHandler = (event) => {
     event.preventDefault();
     dispatch(loadWeatherData(event.target.firstChild.value));
     refInput.current.value = "";
+    history.push("/weather");
   };
 
   return (
@@ -79,7 +83,7 @@ const StyledIntro = styled.div`
   justify-content: center;
   gap: 5rem;
   height: 50vh;
-  margin: 2rem 0;
+  margin: 0 0 2rem 0;
 `;
 const StyledContent = styled.div`
   flex: 1;

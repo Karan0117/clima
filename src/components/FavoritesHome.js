@@ -7,8 +7,8 @@ const FavoritesHome = () => {
   return (
     <StyledFavoritesHome>
       <div className="title">
-        <StarSVG className="star-icon" />
         <h4>Favorites</h4>
+        <StarSVG className="star-icon" />
       </div>
     </StyledFavoritesHome>
   );
@@ -21,9 +21,12 @@ const StyledFavoritesHome = styled.div`
     align-items: center;
     justify-content: flex-start;
     .star-icon {
+      margin-left: 1rem;
+      path {
+        fill: #f4d82f;
+      }
       :hover {
       }
-      margin-right: 1rem;
     }
   }
 `;

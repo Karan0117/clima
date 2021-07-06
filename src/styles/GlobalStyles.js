@@ -47,12 +47,33 @@ const GlobalStyles = createGlobalStyle`
     h2{
         font-size: 4.5rem;
     }
+    h3{
+        font-size: 4rem;
+    }
     h4{
         font-size: 3.6rem;
         font-weight: var(--semi-bold);
     }
+    h5{
+        font-size: 2.4rem;
+    }
     p{
-        font-size: 1.6rem
+        font-size: 1.6rem;
+    }
+    p.description{
+        font-size: 2.4rem;
+        /* font-weight: var(--regular); */
+    }
+    p.temp-numerics{
+        font-size: 8rem;
+        font-weight: var(----semi-bold);
+        line-height: 8rem;
+    }
+    p.secondary-value{
+        font-size: 4.8rem
+    }
+    p.secondary-label{
+opacity: 0.8;
     }
 `;
 

@@ -11,7 +11,10 @@ export const loadWeatherData = (cityName) => async (dispatch) => {
     type: "FETCH_WEATHER",
     payload: {
       city: initialData.data.name,
-      current: weatherInfo.data.current,
+      main: initialData.data.main,
+      wind: initialData.data.wind,
+      weather: initialData.data.weather[0],
+      // current: weatherInfo.data.current,
       hourly: weatherInfo.data.hourly,
       daily: weatherInfo.data.daily,
     },
