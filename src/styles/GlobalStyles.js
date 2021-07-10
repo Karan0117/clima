@@ -73,7 +73,11 @@ const GlobalStyles = createGlobalStyle`
         font-size: 4.8rem
     }
     p.secondary-label{
-opacity: 0.8;
+        opacity: 0.8;
+    }
+
+    .favorite-city{
+            fill: #656565;
     }
 `;
 
