@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { getCurrentDay, getCurrentMonth } from "./Functions";
 // images
 import SunImg from "../media/images/sun.png";
+import { ReactComponent as StarSVG } from "../media/svg/star.svg";
 
 const PrimaryWeather = () => {
   const weatherData = useSelector((state) => state.selected);
@@ -14,10 +15,19 @@ const PrimaryWeather = () => {
     today.getMonth()
   )} ${today.getDate()}`;
 
+  // event handler
+  const favoriteHandler = (event) => {
+    console.log("star", event.target);
+    event.target.classList.toggle("favorite-city");
+  };
+
   return (
     <Primary className="primary">
       <div className="location">
-        <h3>{weatherData.city}</h3>
+        <div className="title">
+          <h3>{weatherData.city}</h3>
+          <StarSVG onClick={favoriteHandler} className="star-icon" />
+        </div>
         <p>{fullDate}</p>
       </div>
       <div className="weather">
@@ -39,6 +49,18 @@ const Primary = styled.div`
   flex: 1;
   .location {
     align-self: flex-start;
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .star-icon {
+        cursor: pointer;
+        margin-left: 1rem;
+        path {
+          fill: #e9e9e9;
+        }
+      }
+    }
   }
   .weather {
     display: flex;

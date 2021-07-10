@@ -6,6 +6,7 @@ const initState = {
   weather: [],
   wind: [],
   daily: [],
+  isFavorite: false,
 };
 
 const weatherReducer = (state = initState, action) => {
