@@ -1,9 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { getTime } from "./Functions";
 
 const SecondaryWeatherBlock = ({ value, label }) => {
   return (
     <StyledSecondaryBlock>
+      {/* {label === "Sunrise" || "Subset" ? (
+        <p className="secondary-value">{getTime(value)}</p>
+      ) : (
+        <p className="secondary-value">{value}</p>
+      )} */}
       <p className="secondary-value">{value}</p>
       <p className="secondary-label">{label}</p>
     </StyledSecondaryBlock>

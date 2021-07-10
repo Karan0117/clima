@@ -2,10 +2,10 @@ const initState = {
   city: "",
   // current: [],
   hourly: [],
-  daily: [],
   main: [],
   weather: [],
   wind: [],
+  daily: [],
 };
 
 const weatherReducer = (state = initState, action) => {
