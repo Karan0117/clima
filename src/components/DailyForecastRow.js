@@ -3,9 +3,9 @@ import styled from "styled-components";
 // images
 import SunImg from "../media/images/sun.png";
 
-const WeeklyForecastRow = ({ day, high, low, desc }) => {
+const DailyForecastRow = ({ day, high, low, desc }) => {
   return (
-    <StyledWeeklyRow>
+    <StyleDailyRow>
       <p>{day}</p>
       <div className="weather-info">
         <img src={SunImg} alt="" />
@@ -15,11 +15,11 @@ const WeeklyForecastRow = ({ day, high, low, desc }) => {
         <p>{high}</p>
         <p>{low}</p>
       </div>
-    </StyledWeeklyRow>
+    </StyleDailyRow>
   );
 };
 
-const StyledWeeklyRow = styled.div`
+const StyleDailyRow = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -51,4 +51,4 @@ const StyledWeeklyRow = styled.div`
   }
 `;
 
-export default WeeklyForecastRow;
+export default DailyForecastRow;
