@@ -7,10 +7,6 @@ import HourlyForecast from "../components/HourlyForecast";
 import DailyForecast from "../components/DailyForecast";
 
 const WeatherPage = () => {
-  //   secondaryData.forEach((data) => {
-  //     console.log("Hello", Object.values(data)[0]);
-  //   });
-
   return (
     <div>
       <CurrentBlock className="current-block">

@@ -14,6 +14,8 @@ export const loadWeatherData = (cityName) => async (dispatch) => {
       main: initialData.data.main,
       wind: initialData.data.wind,
       weather: initialData.data.weather[0],
+      sunrise: initialData.data.sys.sunrise,
+      sunset: initialData.data.sys.sunset,
       // current: weatherInfo.data.current,
       hourly: weatherInfo.data.hourly,
       daily: weatherInfo.data.daily,

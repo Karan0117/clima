@@ -1,6 +1,5 @@
 const initState = {
   city: "",
-  // current: [],
   hourly: [],
   main: [],
   weather: [],
@@ -18,7 +17,8 @@ const weatherReducer = (state = initState, action) => {
         main: action.payload.main,
         wind: action.payload.wind,
         weather: action.payload.weather,
-        // current: action.payload.current,
+        sunrise: action.payload.sunrise,
+        sunset: action.payload.sunset,
         hourly: action.payload.hourly,
         daily: action.payload.daily,
       };

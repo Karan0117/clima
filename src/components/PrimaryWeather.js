@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { getCurrentDay, getCurrentMonth } from "./Functions";
-// images
-import SunImg from "../media/images/sun.png";
+import { getCurrentDay, getCurrentMonth, getWeatherIcon } from "./Functions";
 import { ReactComponent as StarSVG } from "../media/svg/star.svg";
 
 const PrimaryWeather = () => {
@@ -31,7 +29,9 @@ const PrimaryWeather = () => {
         <p>{fullDate}</p>
       </div>
       <div className="weather">
-        <img src={SunImg} alt="" />
+        <div className="current-weather-container">
+          {getWeatherIcon(weatherData.weather.description)}
+        </div>
         <div className="temperature-info">
           <p className="temp-numerics">{weatherData.main.temp}</p>
           <p className="description">{weatherData.weather.description}</p>
@@ -67,6 +67,12 @@ const Primary = styled.div`
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
+    .current-weather-container {
+      svg {
+        width: 20rem;
+        height: 20rem;
+      }
+    }
     .temperature-info {
       display: flex;
       align-items: center;

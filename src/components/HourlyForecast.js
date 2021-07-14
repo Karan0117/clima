@@ -14,6 +14,7 @@ const HourlyForecast = () => {
           key={data.dt}
           time={getHour(data.dt)}
           temp={data.temp}
+          desc={data.weather[0].description}
         />
       ))}
     </HourlyRow>

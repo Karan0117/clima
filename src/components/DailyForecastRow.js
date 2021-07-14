@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-// images
-import SunImg from "../media/images/sun.png";
+import { getWeatherIcon } from "./Functions";
 
 const DailyForecastRow = ({ day, high, low, desc }) => {
   return (
     <StyleDailyRow>
       <p>{day}</p>
       <div className="weather-info">
-        <img src={SunImg} alt="" />
+        <div className="daily-forecast-weather-icon-container">
+          {getWeatherIcon(desc)}
+        </div>
         <p>{desc}</p>
       </div>
       <div className="high-low-temp">
@@ -25,9 +26,7 @@ const StyleDailyRow = styled.div`
   justify-content: space-evenly;
   width: 100%;
   margin: 2rem 0;
-  /* text-align: left; */
   p:nth-child(1) {
-    /* text-align: left; */
     width: 10rem;
   }
   .weather-info {
@@ -38,12 +37,17 @@ const StyleDailyRow = styled.div`
     img {
       width: 5rem;
     }
+    .daily-forecast-weather-icon-container {
+      svg {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
     p {
       margin-left: 1.6rem;
     }
   }
   .high-low-temp {
-    /* background: lightblue; */
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -12,12 +12,10 @@ const SecondaryWeather = () => {
   secondaryData.push(
     { High: weatherData.main.temp_max },
     { "Feels like": weatherData.main.feels_like },
-    { Sunrise: getTime(weatherData.daily[0].sunrise) },
-    // { Sunrise: weatherData.daily[0].sunrise },
+    { Sunrise: getTime(weatherData.sunrise) },
     { Low: weatherData.main.temp_min },
     { "Wind speed": weatherData.wind.speed },
-    { Sunset: getTime(weatherData.daily[0].sunset) }
-    // { Sunset: weatherData.daily[0].sunset }
+    { Sunset: getTime(weatherData.sunset) }
   );
 
   return (
