@@ -62,7 +62,6 @@ const GlobalStyles = createGlobalStyle`
     }
     p.description{
         font-size: 2.4rem;
-        /* font-weight: var(--regular); */
     }
     p.temp-numerics{
         font-size: 8rem;

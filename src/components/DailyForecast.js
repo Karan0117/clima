@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import WeeklyForecastRow from "./DailyForecastRow";
+import DailyForecastRow from "./DailyForecastRow";
 import { getCurrentDay, convertToTime } from "./Functions";
 
 const DailyForecast = () => {
@@ -9,7 +9,7 @@ const DailyForecast = () => {
   return (
     <DailyBlock className="weekly-block">
       {weatherData.daily.map((data) => (
-        <WeeklyForecastRow
+        <DailyForecastRow
           day={getCurrentDay(convertToTime(data.dt).getDay())}
           high={data.temp.max}
           low={data.temp.min}
@@ -21,7 +21,6 @@ const DailyForecast = () => {
 };
 
 const DailyBlock = styled.div`
-  /* background: pink; */
   margin: 2rem 0;
 `;
 
